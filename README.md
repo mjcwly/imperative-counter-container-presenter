@@ -1,4 +1,4 @@
-# imperative-counter-container-presenter
+# Imperative Counter (Container/Presenter)
 
 A demo application by Matthew Cawley
 
