@@ -46,6 +46,7 @@ export class AppComponent {
 
   tickSettingsChangedHandler(tickSettings: ITickSettings): void {
     this.tickSettingsService.setTickSettings(tickSettings);
+    this.updateDisplay();
 
     if (tickSettings.isTicking) {
       this.counterService.startCounter(() => this.updateDisplay());
