@@ -41,6 +41,9 @@ export class CounterService {
     const { tickSpeed, tickDirection } =
       this.tickSettingsService.getTickSettings();
 
+      console.log("tickSpeed", tickSpeed);
+      console.log("tickDirection", tickDirection);
+
     this.timerSubscription = interval(tickSpeed).subscribe(() => {
       const step = this.stepSettingsService.getStep();
       const increment = tickDirection === TickDirection.Up ? step : -step;

@@ -17,24 +17,38 @@ export class TickSettingsComponent {
   tickSpeed = TickSpeedConstants;
   tickDirection = TickDirection;
 
+  ngOnInit() {
+    
+  }
+
   onIsTickingChanged(isTicking: boolean): void {
-    this.tickSettingsChangedEvent.emit({
+    console.log("isTicking", isTicking);
+
+    this.inputTickSettings = {
       ...this.inputTickSettings,
-      isTicking,
-    });
+      isTicking
+    };
+
+    this.tickSettingsChangedEvent.emit(this.inputTickSettings);
   }
 
   onTickSpeedChanged(tickSpeed: TickSpeed): void {
-    this.tickSettingsChangedEvent.emit({
+    console.log("tickSpeed", tickSpeed);
+    this.inputTickSettings = {
       ...this.inputTickSettings,
-      tickSpeed,
-    });
+      tickSpeed
+    };
+
+    this.tickSettingsChangedEvent.emit(this.inputTickSettings);
   }
 
   onTickDirectionChanged(tickDirection: TickDirection): void {
-    this.tickSettingsChangedEvent.emit({
+    console.log("tickDirection", tickDirection);
+    this.inputTickSettings = {
       ...this.inputTickSettings,
-      tickDirection,
-    });
+      tickDirection
+    };
+
+    this.tickSettingsChangedEvent.emit(this.inputTickSettings);
   }
 }
